@@ -7,7 +7,8 @@
   default: true; 
   prefersdark: false; 
   color-scheme: light;
-  --color-primary:#E3B577
+  --color-primary:#E3B577;
+  --color-secondary:rgba(236, 234, 227, 1);
 }
 body{
   font-family: "Rancho", cursive;
