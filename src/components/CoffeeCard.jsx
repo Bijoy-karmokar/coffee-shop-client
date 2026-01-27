@@ -36,6 +36,11 @@ const CoffeeCard = ({ coffee }) => {
       }
     });
   };
+
+  const handleCoffeeEdit=(id)=>{
+         console.log(id);
+         
+  }
   return (
     <div className="bg-base-200 flex items-center justify-evenly space-y-3 p-5">
       <div>
@@ -51,9 +56,11 @@ const CoffeeCard = ({ coffee }) => {
           <Link to={`/coffeeDetails/${_id}`} className="btn join-item">
             <FaEye size={25}></FaEye>
           </Link>
-          <button className="btn join-item">
+          <Link to={`/updateCoffee/${_id}`}>
+            <button className="btn join-item">
             <MdEdit size={25}></MdEdit>
           </button>
+          </Link>
           <button
             onClick={() => handleCoffeeDeleted(_id)}
             className="btn join-item"
