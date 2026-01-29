@@ -4,9 +4,9 @@ import { MdDelete, MdEdit } from "react-icons/md";
 import { Link } from "react-router";
 import Swal from "sweetalert2";
 
-const CoffeeCard = ({ coffee }) => {
+const CoffeeCard = ({ coffee ,setCoffees,coffees}) => {
   // console.log(coffee);
-  const { _id, name, chef, photo, details, supplier } = coffee;
+  const { _id, name, chef, photo, details } = coffee;
 
   const handleCoffeeDeleted = (id) => {
     //    console.log(id);
@@ -31,16 +31,15 @@ const CoffeeCard = ({ coffee }) => {
                     text: "Your file has been deleted.",
                     icon: "success",
                   });
+                  const remainingCoffee = coffees.filter(cof=>cof._id !== id);
+                  setCoffees(remainingCoffee);
             }
           });
       }
     });
   };
 
-  const handleCoffeeEdit=(id)=>{
-         console.log(id);
-         
-  }
+ 
   return (
     <div className="bg-base-200 flex items-center justify-evenly space-y-3 p-5">
       <div>
